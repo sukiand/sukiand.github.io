@@ -1,9 +1,16 @@
-<!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8"/>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -11,9 +18,54 @@
 
 
 
-  <meta name="description" content="Web HotPot"/>
 
 
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="website,note,nodejs,angularjs,nginx," />
@@ -21,16 +73,15 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Don't Worry, Be Happy">
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
-<link rel="canonical" href="http://sukiand.com/2015/09/14/WebTech-Navigate/"/>
+
 
 
 <meta name="description" content="keep on programming –&amp;gt; make a living –&amp;gt; marry a girl –&amp;gt; raise a child –&amp;gt; teach him to program !~
@@ -53,109 +104,266 @@ Web Hotpot. Source code can be found in our github.We always see a lot of cool w
 <meta name="twitter:image" content="http://sukiand.com/images/css_layout.gif">
 
 
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.0" />
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
 
 
 
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+  <link rel="canonical" href="http://sukiand.com/2015/09/14/WebTech-Navigate/"/>
 
 
 
+
+
+  <title> Web HotPot | Don't Worry, Be Happy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
 
 
 
-    <title> Web HotPot · Don't Worry, Be Happy </title>
-  </head>
 
-  <body>
-    <div class="container">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">Don't Worry, Be Happy</a>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Don't Worry, Be Happy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">Welcome</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
 </div>
 
 <nav class="site-nav">
   
+
+  
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item">
-          <a class="menu-item-link" href="/">
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
             Home
           </a>
         </li>
       
         
-        <li class="menu-item">
-          <a class="menu-item-link" href="/archives/">
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
             Archives
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
       
     </ul>
   
+
+  
 </nav>
 
-<div class="mobile-navbar">
-  <div class="mobile-header">
-    <div class="mobile-header-logo">
-      <a href="/." class="logo">Don't Worry, Be Happy</a>
-    </div>
 
-    <div class="mobile-header-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <nav class="mobile-menu">
-    
-      
-      <a class="mobile-menu-item" href="/">
-        Home
-      </a>
-    
-      
-      <a class="mobile-menu-item" href="/archives/">
-        Archives
-      </a>
-    
-  </nav>
-</div>
-      </header>
 
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          Web HotPot
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          Sep 14, 2015
-        </span>
-      </div>
+ </div>
     </header>
 
-    
-      <div class="post-toc" id="post-toc">
-        <h2 class="post-toc-title">Contents</h2>
-        <div class="post-toc-content">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node-js"><span class="toc-text">node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express"><span class="toc-text">express</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#application"><span class="toc-text">application</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router"><span class="toc-text">router</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongoose"><span class="toc-text">mongoose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grunt"><span class="toc-text">grunt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb"><span class="toc-text">mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-end"><span class="toc-text">Front end</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#general"><span class="toc-text">general</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#layout"><span class="toc-text">layout</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery"><span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event"><span class="toc-text">Event</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Effect"><span class="toc-text">Effect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Manipulate-HTML-CSS"><span class="toc-text">Manipulate HTML/CSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jQuery-AJAX"><span class="toc-text">jQuery AJAX</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AngularJS"><span class="toc-text">AngularJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sementicUI"><span class="toc-text">sementicUI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain-name"><span class="toc-text">domain name</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AWS-EC2"><span class="toc-text">AWS EC2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-text">Extra</span></a></li></ol>
-        </div>
-      </div>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
 
-    <div class="post-content">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://sukiand.com/2015/09/14/WebTech-Navigate/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Changyun Gong">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Don't Worry, Be Happy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Don't Worry, Be Happy" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Web HotPot
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-09-14T15:49:57-07:00">
+                2015-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/09/14/WebTech-Navigate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/14/WebTech-Navigate/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <blockquote class="blockquote-center"><p>keep on programming –&gt; make a living –&gt; marry a girl –&gt; raise a child –&gt; teach him to program !~</p>
 </blockquote>
@@ -283,131 +491,379 @@ Web Hotpot. Source code can be found in our github.We always see a lot of cool w
       
     </div>
 
-    
-      <footer class="post-footer">
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
         <div class="post-tags">
           
-            <a href="/tags/website/">website</a>
+            <a href="/tags/website/" rel="tag"># website</a>
           
-            <a href="/tags/note/">note</a>
+            <a href="/tags/note/" rel="tag"># note</a>
           
-            <a href="/tags/nodejs/">nodejs</a>
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
           
-            <a href="/tags/angularjs/">angularjs</a>
+            <a href="/tags/angularjs/" rel="tag"># angularjs</a>
           
-            <a href="/tags/nginx/">nginx</a>
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
           
         </div>
+      
 
-        
-  <nav class="post-nav">
-    
-      <a class="prev" href="/2016/02/12/Color config for putty-vim/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">256-color config for vim in putty</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
-    
-    
-      <a class="next" href="/2015/09/09/ERP-Intern-Experience-in-Yonyou/">
-        <span class="next-text nav-default">ERP Intern Experience in Yonyou</span>
-        <span class="prev-text nav-mobile">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    
-  </nav>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/09/ERP-Intern-Experience-in-Yonyou/" rel="next" title="ERP Intern Experience in Yonyou">
+                <i class="fa fa-chevron-left"></i> ERP Intern Experience in Yonyou
+              </a>
+            
+          </div>
 
-      </footer>
-    
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/12/Color config for putty-vim/" rel="prev" title="256-color config for vim in putty">
+                256-color config for vim in putty <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+
+          
   <div class="comments" id="comments">
     
-  </div>
-
-        </div>  
-      </main>
-
-      <footer id="footer" class="footer">
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-    
-    
-  </div>
-
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
-  </span>
-  
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
-  </span>
-
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2015 - 
-    
-    2016
-
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">Changyun Gong</span>
-  </span>
-</div>
-      </footer>
-
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
+  </div>
 
-    
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Changyun Gong" />
+          <p class="site-author-name" itemprop="name">Changyun Gong</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sukiand" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/changyungong" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
 
 
-    
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vim"><span class="nav-number">1.</span> <span class="nav-text">vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">2.</span> <span class="nav-text">nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-js"><span class="nav-number">3.</span> <span class="nav-text">node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm"><span class="nav-number">3.1.</span> <span class="nav-text">npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#express"><span class="nav-number">3.2.</span> <span class="nav-text">express</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#application"><span class="nav-number">3.2.1.</span> <span class="nav-text">application</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#router"><span class="nav-number">3.2.2.</span> <span class="nav-text">router</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mongoose"><span class="nav-number">3.3.</span> <span class="nav-text">mongoose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grunt"><span class="nav-number">3.4.</span> <span class="nav-text">grunt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mongodb"><span class="nav-number">4.</span> <span class="nav-text">mongodb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Front-end"><span class="nav-number">5.</span> <span class="nav-text">Front end</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">5.1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">5.2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#general"><span class="nav-number">5.2.1.</span> <span class="nav-text">general</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">5.2.2.</span> <span class="nav-text">layout</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery"><span class="nav-number">5.3.</span> <span class="nav-text">jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Event"><span class="nav-number">5.3.1.</span> <span class="nav-text">Event</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Effect"><span class="nav-number">5.3.2.</span> <span class="nav-text">Effect</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Manipulate-HTML-CSS"><span class="nav-number">5.3.3.</span> <span class="nav-text">Manipulate HTML/CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-AJAX"><span class="nav-number">5.3.4.</span> <span class="nav-text">jQuery AJAX</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AngularJS"><span class="nav-number">5.4.</span> <span class="nav-text">AngularJS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sementicUI"><span class="nav-number">5.5.</span> <span class="nav-text">sementicUI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#domain-name"><span class="nav-number">6.</span> <span class="nav-text">domain name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWS-EC2"><span class="nav-number">7.</span> <span class="nav-text">AWS EC2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extra"><span class="nav-number">8.</span> <span class="nav-text">Extra</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Changyun Gong</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'sukiand';
+      var disqus_identifier = '2015/09/14/WebTech-Navigate/';
+
+      var disqus_title = "Web HotPot";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
   
 
 
 
 
 
+
+
   
-    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
   
 
   
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
   
 
-    <script type="text/javascript" src="/js/src/even.js?v=2.1.0"></script>
-<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.0"></script>
+  
 
-  </body>
+  
+
+
+</body>
 </html>
