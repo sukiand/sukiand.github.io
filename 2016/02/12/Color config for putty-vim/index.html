@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="256-color config for vim in putty"/>
+
+
+
+
+  <meta name="keywords" content="vim,putty,xterm256," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Don't Worry, Be Happy">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.0" />
+
+
+
+<link rel="canonical" href="http://sukiand.com/2016/02/12/Color config for putty-vim/"/>
+
+
+<meta name="description" content="putty is an SSH and telnet client for windows users to connect to Linux systems.
+When connected to Ubuntu Virtual machine, I use putty as a Linux terminal and I use vim as my editor to do some coding.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="256-color config for vim in putty">
+<meta property="og:url" content="http://sukiand.com/2016/02/12/Color config for putty-vim/index.html">
+<meta property="og:site_name" content="Don't Worry, Be Happy">
+<meta property="og:description" content="putty is an SSH and telnet client for windows users to connect to Linux systems.
+When connected to Ubuntu Virtual machine, I use putty as a Linux terminal and I use vim as my editor to do some coding.">
+<meta property="og:image" content="http://sukiand.com/images/putty-config.PNG">
+<meta property="og:image" content="http://sukiand.com/images/putty-effect.PNG">
+<meta property="og:image" content="http://sukiand.com/images/vim-effect1.PNG">
+<meta property="og:image" content="http://sukiand.com/images/vim-effect2.PNG">
+<meta property="og:image" content="http://sukiand.com/images/special-font.PNG">
+<meta property="og:image" content="http://sukiand.com/images/final-effect.PNG">
+<meta property="og:updated_time" content="2017-01-01T00:01:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="256-color config for vim in putty">
+<meta name="twitter:description" content="putty is an SSH and telnet client for windows users to connect to Linux systems.
+When connected to Ubuntu Virtual machine, I use putty as a Linux terminal and I use vim as my editor to do some coding.">
+<meta name="twitter:image" content="http://sukiand.com/images/putty-config.PNG">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> 256-color config for vim in putty · Don't Worry, Be Happy </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Don't Worry, Be Happy</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Don't Worry, Be Happy</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          256-color config for vim in putty
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 12, 2016
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#putty-vim-256-color-problem"><span class="toc-text">putty vim 256 color problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#putty"><span class="toc-text">putty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bash"><span class="toc-text">bash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Final-effect-of-putty-with-vim"><span class="toc-text">Final effect of putty with vim</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#putty-airline-seperator-font-problem"><span class="toc-text">putty airline seperator font problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#final-effect-of-powerline"><span class="toc-text">final effect of powerline</span></a></li></ol></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p><a href="http://www.putty.org/" target="_blank" rel="external">putty</a> is an SSH and telnet client for windows users to connect to Linux systems.</p>
+<p>When connected to Ubuntu Virtual machine, I use putty as a Linux terminal and I use vim as my editor to do some coding. Vim can be configured into a beautiful IDE but putty cannot show the beauty because putty is not a GUI mode.</p>
+<a id="more"></a>
+<h2 id="putty-vim-256-color-problem"><a href="#putty-vim-256-color-problem" class="headerlink" title="putty vim 256 color problem"></a>putty vim 256 color problem</h2><p>When I try to config vim with some interface, such as <a href="https://github.com/altercation/vim-colors-solarized" target="_blank" rel="external">solarized</a>, <a href="https://github.com/vim-airline/vim-airline" target="_blank" rel="external">vim-airline</a> or some general config to hilight the cursor line and cursor column in <code>.vimrc</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> cursorline</div><div class="line"><span class="built_in">set</span> cursorcolumn</div><div class="line">hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white</div><div class="line">hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white</div></pre></td></tr></table></figure></p>
+<p>The effect is terrible and the variable can only support 8 colors. Some people may run into the problem such as <a href="http://stackoverflow.com/questions/9832660/why-dont-most-vim-color-schemes-look-as-nice-as-the-screenshot-when-i-use-them" target="_blank" rel="external">someone in stackoverflow</a>.<br>Yes right there must be some ways to solve the problem!!</p>
+<h3 id="putty"><a href="#putty" class="headerlink" title="putty"></a>putty</h3><p>In the putty config, <code>Window-&gt;colours</code>, enable the xterm 256-colour mode<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/putty-config.PNG" class="full-image" alt="not found :P" title="putty config"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>.<br><!-- ![loading error](./public/putty-config.png). --><br>Also I set some colors here:<br>Default Forground:         RGB(143,119,181)<br>Default Bold Forground: RGB(255,255,255)<br>Default Background:        RBG(0,0,0)<br>Default Bold Background RGB(85,85,85)<br>Cursor Colour:            RGB(240,94,28)<br>There is a <a href="http://nipponcolors.com/" target="_blank" rel="external">japan traditional color website</a> shows a varity of colors.</p>
+<p>In <code>Window-&gt;Appearance</code>, set:<br>Font: Consolas<br>size: 14-point</p>
+<p>Moreover, the configuration of putty must be save under a session. And the configuation is only effective the the single session. So I recommend you the tool <a href="https://sourceforge.net/projects/puttymanager/" target="_blank" rel="external">putty manager</a>, which can manage putty and <a href="https://winscp.net/eng/download.php" target="_blank" rel="external">winscp</a>.</p>
+<h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><p>In the <strong>ubuntu</strong> virtual machine, we need to change the <code>~/.bashrc</code>, the terminal support 256-mode, so adding the script:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> TERM=xterm-256color</div></pre></td></tr></table></figure></p>
+<p><strong>Rember to reopen a putty, or the .bashrc won’t be reload.</strong></p>
+<h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><p>add the script to <code>.vimrc</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="variable">$TERM</span> == <span class="string">"xterm-256color"</span></div><div class="line">  <span class="built_in">set</span> t_Co=256</div><div class="line">endif</div></pre></td></tr></table></figure></p>
+<p>Then it’s free to use the colorful plugins.</p>
+<p>setting for solarized:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">let</span> g:solarized_bold = 0</div><div class="line"><span class="built_in">let</span> g:solarized_contrast = <span class="string">"low"</span></div><div class="line"><span class="built_in">let</span> g:solarized_termcolors = 256</div><div class="line"></div><div class="line"><span class="keyword">if</span> has(<span class="string">'gui_running'</span>)</div><div class="line">	<span class="built_in">set</span> background=light</div><div class="line"><span class="keyword">else</span></div><div class="line">	<span class="built_in">set</span> background=dark</div><div class="line">endif</div><div class="line"></div><div class="line">colorscheme solarized</div></pre></td></tr></table></figure></p>
+<p>setting for cursor:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> cursorline</div><div class="line"><span class="built_in">set</span> cursorcolumn</div><div class="line">hi CursorLine   cterm=NONE ctermbg=237 ctermfg=NONE guibg=darkred guifg=white</div><div class="line">hi CursorColumn cterm=NONE ctermbg=235 ctermfg=NONE guibg=darkred guifg=white</div></pre></td></tr></table></figure></p>
+<p>Only cterm matters because we are not in gui mode. And the color can be quired in <a href="http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim" target="_blank" rel="external">Xterm256 color table</a>.</p>
+<h3 id="Final-effect-of-putty-with-vim"><a href="#Final-effect-of-putty-with-vim" class="headerlink" title="Final effect of putty with vim"></a>Final effect of putty with vim</h3><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/putty-effect.PNG" class="full-image" alt="not found :P" title="putty effect"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/vim-effect1.PNG" class="full-image" alt="not found :P" title="vim normal mode effect"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/vim-effect2.PNG" class="full-image" alt="not found :P" title="vim insert mode effect"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<!-- ![putty-effect](./public/putty-effect.png) -->
+<!-- ![vim-normal-effect](./public/vim-effect1.png) -->
+<!-- ![vim-insert-effect1](./public/vim-effect2.png) -->
+<h2 id="putty-airline-seperator-font-problem"><a href="#putty-airline-seperator-font-problem" class="headerlink" title="putty airline seperator font problem"></a>putty airline seperator font problem</h2><p>Some people may find that in the effect, the seperator looks strange. The seperator should be ‘▶’. ‘&gt;’ or ‘&gt;&gt;’ may look not that good. Also some people want to solve the <a href="http://vi.stackexchange.com/questions/3359/how-to-fix-status-bar-symbols-in-airline-plugin" target="_blank" rel="external">symbol font problem</a>.</p>
+<p>As recommanded in the answer, we need to install the corresponding font in terminal, here means putty. While putty support the font installed in the windows system.<br>Here is the steps(prequest: have already solved the previous problem, xterm 256 color supported and vim-airline installed.):</p>
+<ul>
+<li><strong>download</strong> the <a href="https://github.com/powerline/fonts" target="_blank" rel="external">powerline fonts</a>, <strong>install</strong> them in windows, so that putty can support these fonts. You can also installed them in Ubuntu virtual machine in case of gui mode.</li>
+<li><strong>reopen</strong> putty<ol>
+<li><code>Window-Apperance-Font</code> set to a font downloaded, such as Hack.</li>
+<li><code>Window-Translation-Character Set</code> set to UTF-8.</li>
+</ol>
+</li>
+<li>Verify your .vimrc and ubuntu VM support UTF-8.</li>
+<li><p>Change the <code>.vimrc</code> file. The setting of seperator can be viewed with command in vim: </p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:<span class="built_in">help</span> airline</div></pre></td></tr></table></figure>
+<p>  add the following to <code>.vimrc</code>:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="string">" Conf for airline   "</span></div><div class="line"><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span></div><div class="line"><span class="built_in">let</span> g:airline_powerline_fonts = 1</div><div class="line"></div><div class="line"><span class="keyword">if</span> !exists(<span class="string">'g:airline_symbols'</span>)</div><div class="line">  <span class="built_in">let</span> g:airline_symbols = &#123;&#125;</div><div class="line">endif</div><div class="line"></div><div class="line"><span class="string">" powerline symbols</span></div><div class="line">let g:airline_left_sep = ''</div><div class="line">let g:airline_left_alt_sep = ''</div><div class="line">let g:airline_right_sep = ''</div><div class="line">let g:airline_right_alt_sep = ''</div><div class="line">let g:airline_symbols.branch = ''</div><div class="line">let g:airline_symbols.readonly = ''</div><div class="line">let g:airline_symbols.linenr = ''</div><div class="line"></div><div class="line">let g:airline#extensions#tabline#enabled = 1</div><div class="line">let g:airline#extensions#tabline#left_sep = ''</div><div class="line">let g:airline#extensions#tabline#left_alt_sep = ''</div><div class="line">let g:airline#extensions#tabline#tab_nr_type = 1 " tab number</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>The  is some the root of the problem. They look like this in the setting:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/special-font.PNG" class="full-image" alt="not found :P" title="special character"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![special character](./public/special-font.png). -->  </p>
+<h3 id="final-effect-of-powerline"><a href="#final-effect-of-powerline" class="headerlink" title="final effect of powerline"></a>final effect of powerline</h3><p>Wow! That’s it! Much much much beautiful! Go coding!<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/final-effect.PNG" class="full-image" alt="not found :P" title="final effect"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![special character](./public/final-effect.png). -->  </p>
+<p>The setting of vim can be downloaded from my github, <a href="https://github.com/sukiand/dotfiles" target="_blank" rel="external">dotfile repository</a>. Or run the command<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/sukiand/dotfiles.git</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/vim/">vim</a>
+          
+            <a href="/tags/putty/">putty</a>
+          
+            <a href="/tags/xterm256/">xterm256</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/02/16/web performance/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Web test && monitor</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2015/09/14/WebTech-Navigate/">
+        <span class="next-text nav-default">Web HotPot</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2016
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Changyun Gong</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.0"></script>
+
+  </body>
+</html>

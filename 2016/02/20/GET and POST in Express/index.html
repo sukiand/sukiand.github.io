@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Express communication with GET and POST"/>
+
+
+
+
+  <meta name="keywords" content="get,post,wireshark," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Don't Worry, Be Happy">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.0" />
+
+
+
+<link rel="canonical" href="http://sukiand.com/2016/02/20/GET and POST in Express/"/>
+
+
+<meta name="description" content="I want to do a like system, to record the like and dislike of a certain tool, language or framework, on my own website, Web Hotpot. Recently I’m rewriting it from angular to react.This blog is used to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Express communication with GET and POST">
+<meta property="og:url" content="http://sukiand.com/2016/02/20/GET and POST in Express/index.html">
+<meta property="og:site_name" content="Don't Worry, Be Happy">
+<meta property="og:description" content="I want to do a like system, to record the like and dislike of a certain tool, language or framework, on my own website, Web Hotpot. Recently I’m rewriting it from angular to react.This blog is used to">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/like-function.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/server-get-old.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/wireshark-get-old.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/server-get-express.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/wireshark-get-express.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/server-post.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/wireshark-post-1.PNG">
+<meta property="og:image" content="http://sukiand.com/images/get-and-post/wireshark-post-2.PNG">
+<meta property="og:updated_time" content="2017-01-01T00:01:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Express communication with GET and POST">
+<meta name="twitter:description" content="I want to do a like system, to record the like and dislike of a certain tool, language or framework, on my own website, Web Hotpot. Recently I’m rewriting it from angular to react.This blog is used to">
+<meta name="twitter:image" content="http://sukiand.com/images/get-and-post/like-function.PNG">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> Express communication with GET and POST · Don't Worry, Be Happy </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Don't Worry, Be Happy</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Don't Worry, Be Happy</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Express communication with GET and POST
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 20, 2016
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GET"><span class="toc-text">GET</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ClientSide"><span class="toc-text">ClientSide</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#General-way"><span class="toc-text">General way</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Express-Way"><span class="toc-text">Express Way</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POST"><span class="toc-text">POST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#client-side"><span class="toc-text">client side</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#server-side"><span class="toc-text">server side</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>I want to do a like system, to record the like and dislike of a certain tool, language or framework, on my own website, <a href="http://www.webhotpot.com" target="_blank" rel="external">Web Hotpot</a>. Recently I’m rewriting it from angular to react.<br>This blog is used to record how to transfer data from client to server, with get and post method.</p>
+<a id="more"></a>
+<p>Client: react, jquery<br>Server: node, express</p>
+<p>The like function look like this:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/like-function.PNG" class="full-image" alt="not found :P" title="like system"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![like system](./public/get-and-post/like-function.PNG) --></p>
+<h2 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h2><h3 id="ClientSide"><a href="#ClientSide" class="headerlink" title="ClientSide"></a>ClientSide</h3><p><strong>HTML that render in react</strong>, register a “onClick” action<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;i className=<span class="string">"large thumb up"</span> onclick=&#123;this.handleShowLike&#125;&gt;</div></pre></td></tr></table></figure></p>
+<p><strong>function that handle click</strong>, this function will get the original state of like icon and dislike icon, then call jquery ajax to send request.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">handleShowLike: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//according to the status of like and dislike</div><div class="line">    //there are several situations:</div><div class="line">    call dealWithlikes(like,dislike);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="General-way"><a href="#General-way" class="headerlink" title="General way"></a>General way</h3><p><strong>function that send request with get method</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">dealWithLike: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	$.ajax(&#123;</div><div class="line">    	url:<span class="string">"/api/like"</span>,</div><div class="line">        method: <span class="string">"GET"</span>,</div><div class="line">        data:&#123;</div><div class="line">        	website: this.props.website.name,</div><div class="line">            like: like,</div><div class="line">            dislike: dislike</div><div class="line">        &#125;,</div><div class="line">        success: <span class="function"><span class="title">function</span></span>()&#123;&#125;.bind(this),</div><div class="line">        error: <span class="function"><span class="title">function</span></span>()&#123;&#125;.bind(this)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>server router</strong>, to deal with the get request at <code>/api/like</code>. In this case, the task will be handled by a function called setLike, in websites controller.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Router.route(<span class="string">'/api/like'</span>)</div><div class="line">	.get(controller.websites.setLike);</div></pre></td></tr></table></figure></p>
+<p><strong>server controller</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">exports.setLike = <span class="keyword">function</span>(req, res)&#123;</div><div class="line">	console.log(<span class="string">'method:'</span>+req.method);</div><div class="line">    console.log(<span class="string">'path:'</span>+req.path);</div><div class="line">    console.log(req.body);</div><div class="line">    console.log(req.params);</div><div class="line">    console.log(req.query);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>we out put some member of request, to compare the difference with others.<br>Then I click the like icon of ‘Grunt’. To see what we will get in <strong>server side</strong>:</p>
+<ul>
+<li>req.method</li>
+<li>req.path</li>
+<li>req.body</li>
+<li>req.params</li>
+<li>req.query</li>
+</ul>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/server-get-old.PNG" class="full-image" alt="not found :P" title="server get result"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<!-- ![server get result](./public/get-and-post/server-get-old.PNG) -->
+<p>Then I want to see what is captured during the translation.<br>Run wire shark as administrator.<br>The VM is in NAT mode. And check the VMware config, NAT is responsible by Vmware Network Adapter VMnet8. So just need to monitor this VMnet8 interface.<br><strong>wireshark</strong><br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/wireshark-get-old.PNG" class="full-image" alt="not found :P" title="wireshark get result"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![wireshark get result](./public/get-and-post/wireshark-get-old.PNG) --><br>All the parameters are appended in the url.</p>
+<h3 id="Express-Way"><a href="#Express-Way" class="headerlink" title="Express Way"></a>Express Way</h3><p>Also, the parameters are appended in the url. But the format may be different.<br><strong>function that send get request</strong>, no data.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dealWithLike: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	$.ajax(&#123;</div><div class="line">    	url:<span class="string">"/api/like/"</span>+this.props.website.name+<span class="string">"/"</span>+like+<span class="string">"/"</span>+dislike,</div><div class="line">        method: <span class="string">"GET"</span>,</div><div class="line">        success: <span class="function"><span class="title">function</span></span>()&#123;&#125;.bind(this),</div><div class="line">        error: <span class="function"><span class="title">function</span></span>()&#123;&#125;.bind(this)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>router</strong>, here is the difference with the general one<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Router.route(<span class="string">'/api/like/:website/:like:/:dislike'</span>)</div><div class="line">	.get(controllers.website.setLike)</div></pre></td></tr></table></figure></p>
+<p><strong>server controller</strong>. the same controller, print out several members. Let’s see what’s the difference.<br><strong>server side</strong></p>
+<ul>
+<li>req.method</li>
+<li>req.path</li>
+<li>req.body</li>
+<li>req.params</li>
+<li>req.query</li>
+</ul>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/server-get-express.PNG" class="full-image" alt="not found :P" title="server get express result"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<!-- ![server get express result](./public/get-and-post/server-get-express.PNG) -->
+<p><strong>wireshark</strong><br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/wireshark-get-express.PNG" class="full-image" alt="not found :P" title="wireshark get result"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![wireshark get result](./public/get-and-post/wireshark-get-express.PNG) --><br>We can see the url is in different from the general format.</p>
+<p>If you need to use GET method, personally i recommand this way.</p>
+<h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><h3 id="client-side"><a href="#client-side" class="headerlink" title="client side"></a>client side</h3><p>The same with get, we need to register onclick event to the icon. Only the send request is differnt:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">dealWithLike: <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	$.ajax(&#123;</div><div class="line">    	url:<span class="string">"/api/like"</span>,</div><div class="line">        method: <span class="string">"POST"</span>,</div><div class="line">        data:&#123;</div><div class="line">        	website: this.props.website.name,</div><div class="line">            like: like,</div><div class="line">            dislike: dislike</div><div class="line">        &#125;,</div><div class="line">        success: <span class="function"><span class="title">function</span></span>()&#123;&#125;.bind(this),</div><div class="line">        error: <span class="function"><span class="title">function</span></span>()&#123;&#125;.bind(this)</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>The only difference seem to be, the method.</p>
+<h3 id="server-side"><a href="#server-side" class="headerlink" title="server side"></a>server side</h3><p><strong>node server config</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var bodyParser = require(<span class="string">'body-parser'</span>);</div><div class="line">app.use(bodyParser.json()); // support json encoded bodies</div><div class="line">app.use(bodyParser.urlencoded(&#123; extended: <span class="literal">true</span> &#125;)); // support encoded bodies</div></pre></td></tr></table></figure></p>
+<p><strong>router</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Router.route(<span class="string">'/api/like'</span>)</div><div class="line">	.post(controllers.website.setLike);</div></pre></td></tr></table></figure></p>
+<p>route().get, route().post, route().all</p>
+<p><strong>controller</strong><br>console.out some parameters to see what happens here:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/server-post.PNG" class="full-image" alt="not found :P" title="server side pose result"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![server side pose result](./public/get-and-post/server-post.PNG) --></p>
+<p><strong>wireshark</strong><br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/wireshark-post-1.PNG" class="full-image" alt="not found :P" title="wireshark post request"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![wireshark post request](./public/get-and-post/wireshark-post-1.PNG) --><br>No parameters appended.<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/get-and-post/wireshark-post-2.PNG" class="full-image" alt="not found :P" title="wireshark post request"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![wireshark post request](./public/get-and-post/wireshark-post-2.PNG) --><br>The parameters are in body, encoded by wireshark.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>parameters are in differnt member in request:</p>
+<ul>
+<li>general GET: req.query</li>
+<li>GET : req.params</li>
+<li>POST: req.body, which need the bodyparser</li>
+</ul>
+<p>GET is used to get resources. By showing the paramters in the url, the whole url can be stored as bookmarks.<br>POST is used to change some resource on the server. In this case, we need to change the number of like in the database, so POST is better. After send the request to the server, according to the website name and the parameters, we can update the database. Then server return some kind of messgae to confirm the update, which will be showed in react.<br>Moreover, if you want to pass the username and password, <strong>must</strong> use POST.</p>
+<p>Useful docs:</p>
+<ul>
+<li><a href="http://api.jquery.com/jquery.ajax/" target="_blank" rel="external">jQuery.ajax()</a></li>
+<li><a href="http://expressjs.com/en/api.html" target="_blank" rel="external">express API</a></li>
+<li><a href="https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters" target="_blank" rel="external">Use ExpressJS to Get URL and POST Parameters</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/get/">get</a>
+          
+            <a href="/tags/post/">post</a>
+          
+            <a href="/tags/wireshark/">wireshark</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/03/26/advice on job seeking/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">advice on looking for jobs</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/02/17/Those food I cooked/">
+        <span class="next-text nav-default">Those Food I Cooked</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2016
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Changyun Gong</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.0"></script>
+
+  </body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Web test && monitor"/>
+
+
+
+
+  <meta name="keywords" content="nginx,jmeter,load test,monitor,java heap," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Don't Worry, Be Happy">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.0" />
+
+
+
+<link rel="canonical" href="http://sukiand.com/2016/02/16/web performance/"/>
+
+
+<meta name="description" content="After deploying personal website, Web Hotpot, the configurations can be seen in another blog Web Hotpot. I want to know the web perforamnce of the combination with nginx and nodejs.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web test && monitor">
+<meta property="og:url" content="http://sukiand.com/2016/02/16/web performance/index.html">
+<meta property="og:site_name" content="Don't Worry, Be Happy">
+<meta property="og:description" content="After deploying personal website, Web Hotpot, the configurations can be seen in another blog Web Hotpot. I want to know the web perforamnce of the combination with nginx and nodejs.">
+<meta property="og:image" content="http://sukiand.com/images/jmeter-thread-group.PNG">
+<meta property="og:image" content="http://sukiand.com/images/jmeter-http-request-sample.PNG">
+<meta property="og:image" content="http://sukiand.com/images/machine-task-pre-status.PNG">
+<meta property="og:image" content="http://sukiand.com/images/test-plan-config.PNG">
+<meta property="og:image" content="http://sukiand.com/images/server-top-pre-status.PNG">
+<meta property="og:image" content="http://sukiand.com/images/server-ngxtop-pre-status.PNG">
+<meta property="og:image" content="http://sukiand.com/images/machine-task-during-status.PNG">
+<meta property="og:image" content="http://sukiand.com/images/jmeter-graph-result.PNG">
+<meta property="og:image" content="http://sukiand.com/images/jmeter-summary-report.PNG">
+<meta property="og:image" content="http://sukiand.com/images/server-top-during-status.PNG">
+<meta property="og:image" content="http://sukiand.com/images/server-ngxtop-during-status.PNG">
+<meta property="og:updated_time" content="2017-01-01T00:01:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web test && monitor">
+<meta name="twitter:description" content="After deploying personal website, Web Hotpot, the configurations can be seen in another blog Web Hotpot. I want to know the web perforamnce of the combination with nginx and nodejs.">
+<meta name="twitter:image" content="http://sukiand.com/images/jmeter-thread-group.PNG">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> Web test && monitor · Don't Worry, Be Happy </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Don't Worry, Be Happy</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Don't Worry, Be Happy</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Web test && monitor
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Feb 16, 2016
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Load-test"><span class="toc-text">Load test</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#add-users"><span class="toc-text">add users</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add-default-HTTP-requests-and-HTTP-requests"><span class="toc-text">add default HTTP requests and HTTP requests</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add-Listerners"><span class="toc-text">add Listerners</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monitor-Server"><span class="toc-text">Monitor Server</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#top"><span class="toc-text">top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx-log"><span class="toc-text">nginx log</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ngxtop"><span class="toc-text">ngxtop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#more-tools"><span class="toc-text">more tools</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Test-report"><span class="toc-text">Test report</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <p>After deploying personal website, <a href="http://www.webhotpot.com" target="_blank" rel="external">Web Hotpot</a>, the configurations can be seen in another <a href="http://sukiand.github.io/2015/09/14/WebTech-Navigate/" target="_blank" rel="external">blog Web Hotpot</a>. I want to know the web perforamnce of the combination with nginx and nodejs.</p>
+<a id="more"></a>
+<h3 id="Load-test"><a href="#Load-test" class="headerlink" title="Load test"></a>Load test</h3><p><a href="http://jmeter.apache.org/" target="_blank" rel="external">Apache Jmeter</a> is open source JAVA application to do load testing. Besides the official guide, The official guide about <a href="http://jmeter.apache.org/usermanual/build-web-test-plan.html" target="_blank" rel="external">How to Building a Web Test Plan</a>is really helpful to start using Jemeter. Also we can learn to use it by watching <a href="https://www.youtube.com/watch?v=cv7KqxaLZd8" target="_blank" rel="external">Learning JMeter in 60 Minutes</a>.</p>
+<p><strong>Prerequest: </strong>Be sure to have java installed first in your computer. Check if java is installed:<br>Windows,in cmd:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">java</div><div class="line">javac</div><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<p>Linux:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ java -version</div></pre></td></tr></table></figure></p>
+<p>if not recognized, install java first.</p>
+<p>Download JMeter, then double-click <code>$JMeter_home/bin/jmeter.bat</code> to launch.</p>
+<h4 id="add-users"><a href="#add-users" class="headerlink" title="add users"></a>add users</h4><ol>
+<li>Right-click on Test Plan-&gt;</li>
+<li>Add-&gt;</li>
+<li>Thread(Users)-&gt;</li>
+<li>Thread Group</li>
+</ol>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/jmeter-thread-group.PNG" class="full-image" alt="not found :P" title="thread group sample"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<!-- ![jmeter thread group](./public/jmeter-thread-group.PNG) -->
+<ul>
+<li>Number of users: number of users JMeter will simulate</li>
+<li>Ramp-Up Period: how often users will send requests<br>For example,50 users in 5 seconds means 10 users request per second.</li>
+<li>Loop: times to repeat the test.</li>
+</ul>
+<p>It’s up to you whether to check the forever box.</p>
+<p><strong>java heap error and GC overhead limit exceeded:</strong> Once you start the test with large user numbers, you will notify that it will show test failed due to running out of java heap. I ran into the problem and here is several solutions:</p>
+<ol>
+<li><a href="http://stackoverflow.com/questions/20647651/jmeter-test-failed-with-out-of-memory-error" target="_blank" rel="external">external parameter</a></li>
+<li><a href="https://blazemeter.com/blog/9-easy-solutions-jmeter-load-test-%E2%80%9Cout-memory%E2%80%9D-failure" target="_blank" rel="external">better JMeter usage</a></li>
+<li><a href="https://www.youtube.com/watch?v=WYtH5yJRz5s" target="_blank" rel="external">Java environment</a></li>
+<li><a href="http://www.testerlogic.com/how-setup-configure-jmeter-windows/" target="_blank" rel="external">configure in Jmeter.bat</a></li>
+</ol>
+<p>I choose the way 4, in <code>jmeter.bat</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// default configuration</div><div class="line"><span class="built_in">set</span> HEAP=-Xms512m -Xmx512m</div><div class="line"><span class="built_in">set</span> NEW=-XX:NewSize=128m -XX:MaxNewSize=128m</div><div class="line"></div><div class="line"></div><div class="line">// new settings could be like this *depending* on your hardware and software specs</div><div class="line">// note that, Max heap size should not exceed the 80% of total system memory</div><div class="line"><span class="built_in">set</span> HEAP=-Xms512m -Xmx2048m</div><div class="line"><span class="built_in">set</span> NEW=-XX:NewSize=128m -XX:MaxNewSize=1024m</div></pre></td></tr></table></figure></p>
+<p>Running test on local machine, really really consume a lot of resources. I still not have enough heap space to support 100 user simulations.</p>
+<h4 id="add-default-HTTP-requests-and-HTTP-requests"><a href="#add-default-HTTP-requests-and-HTTP-requests" class="headerlink" title="add default HTTP requests and HTTP requests"></a>add default HTTP requests and HTTP requests</h4><p>Default HTTP request:</p>
+<ol>
+<li>select Thread Group, right click</li>
+<li>Add -&gt;</li>
+<li>Config Element-&gt;</li>
+<li>HTTP Request Default</li>
+</ol>
+<p>Keep it default if you will specify HTTP request.<br>HTTP request:</p>
+<ol>
+<li>Select Thread Group, right click</li>
+<li>Add -&gt;<a href="http://" target="_blank" rel="external"></a></li>
+<li>Sampler -&gt;</li>
+<li>HTTP Request</li>
+</ol>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/jmeter-http-request-sample.PNG" class="full-image" alt="not found :P" title="HTTP request config sample"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<!-- ![jmeter HTTP request sample](./public/jmeter-http-request-sample.PNG) -->
+<ul>
+<li>Name: whatever..</li>
+<li>ServerName of IP: no ‘http://‘ and no ‘/‘ in the end</li>
+<li>Path: page path in your website</li>
+<li>Retrieve ALL Embeded Resources: I check this box to over test it. any JS, CSS, images etc will related to this page will be tested.</li>
+</ul>
+<p>you can also set parameters in this session. We can mimic normal http request here.</p>
+<h4 id="add-Listerners"><a href="#add-Listerners" class="headerlink" title="add Listerners"></a>add Listerners</h4><ol>
+<li>select Thread Group, right click</li>
+<li>Add-&gt;</li>
+<li>Listener</li>
+<li>Graph Result</li>
+<li>repeat 1~4, add View Results Tree</li>
+</ol>
+<h3 id="Monitor-Server"><a href="#Monitor-Server" class="headerlink" title="Monitor Server"></a>Monitor Server</h3><p>There are many metrics worth to be monitored. I just list several of them.</p>
+<ul>
+<li>Request per seconds(RPS)<br>  Spike of RPS can indicate increasing of customer activity or a DDoS attack. Drop of RPS may be the sign of network connection issues or lack of kind of resource such as CPU or RAM.</li>
+<li>Response Time<br>  Response time measures how quickly the requests are being handled. One of the most important application performance.</li>
+<li>Response Code<br>  <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank" rel="external">HTTP response code</a> know thhe health of the server and clients.</li>
+<li>Server status<br>  network usage, RAM usgae, CPU usage, disk usage</li>
+<li>Active connections<br>  hard limit on the total numbber on connections that the server can handle.</li>
+</ul>
+<h4 id="top"><a href="#top" class="headerlink" title="top"></a>top</h4><p>Ubuntu command. We can see the top progress, and monitoring the usage of CPU, RAM, etc.</p>
+<h4 id="nginx-log"><a href="#nginx-log" class="headerlink" title="nginx log"></a>nginx log</h4><p>nginx log is located at <code>/var/log/nginx/</code>. The log format can be customized. We can add varibles provided by nginx, add into the log.<br>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">log_format upstream_time <span class="string">'$remote_addr - $remote_user [$time_local] '</span></div><div class="line">                             <span class="string">'"$request" $status $body_bytes_sent '</span></div><div class="line">                             <span class="string">'"$http_referer" "$http_user_agent"'</span></div><div class="line">                             <span class="string">'rt=$request_time uct="$upstream_connect_time" uht="$upstream_header_time" urt="$upstream_response_time"'</span>;</div><div class="line"></div><div class="line">access_log /path/to/nginx-access.log upstream_time;</div></pre></td></tr></table></figure></p>
+<p>There are two modules related to monitoring the status of HTTP request</p>
+<ol>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_status_module.html" target="_blank" rel="external">ngx_http_status_module</a><br>This module provide more details about the HTPP status information, but only available in Nginx Plus.</li>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_stub_status_module.html" target="_blank" rel="external">ngx_http_stub_status_module</a><br>This module can only provide access to basic information status.</li>
+</ol>
+<p><strong>nginx status page</strong>:</p>
+<ol>
+<li>enable ngx_http_stub_status_module module.<br>check the if the module is enable<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -V 2&gt;&amp;1 | grep -o with-http_stub_status_module</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>If enabled, the terminal will show that:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">with-http_stub_status_module</div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>add the following to the configuration of nginx, <code>/etc/nginx/sites-enabled/xxx</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">location /status &#123;</div><div class="line">          stub_status on;</div><div class="line">          access_log   off;</div><div class="line">          allow some_trust_IP_addreess;</div><div class="line">          deny all;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>nginx reload the config.</p>
+</li>
+<li>type <a href="http://some_ip/status" target="_blank" rel="external">http://some_ip/status</a> you will see a simple webpage showing that:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Active connections: 1 </div><div class="line">server accepts handled requests</div><div class="line"> 5443 5343 156541 </div><div class="line">Reading: 0 Writing: 1 Waiting: 0</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="ngxtop"><a href="#ngxtop" class="headerlink" title="ngxtop"></a>ngxtop</h4><p>As its name, nginx+top. <a href="https://github.com/lebinh/ngxtop" target="_blank" rel="external">Ngxtop</a> is a real-time metrics for nginx, written in python.<br>Installation:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ngxtop</div></pre></td></tr></table></figure></p>
+<h4 id="more-tools"><a href="#more-tools" class="headerlink" title="more tools"></a>more tools</h4><p>There are more advanced tools to monitor the server, with friendly interface or with some specific requirement.</p>
+<ul>
+<li>nginx plus</li>
+<li>density server</li>
+<li>munin</li>
+<li>DynamicAPP</li>
+</ul>
+<p>But they are not free.</p>
+<h3 id="Test-report"><a href="#Test-report" class="headerlink" title="Test report"></a>Test report</h3><p>80 users in 10 seconds, Loop 5. Each user will send three HTTP request for three different pages, all data trieved.<br>The server is in AWS EC2. The lowest configuration, ubuntu server with 1GB RAM.</p>
+<p><strong>Pre Status</strong><br>local machine:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/machine-task-pre-status.PNG" class="full-image" alt="not found :P" title="local machine initial status"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/machine-task-pre-status.PNG) --><br>Jmeter:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/test-plan-config.PNG" class="full-image" alt="not found :P" title="jmeter test plan config"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/test-plan-config.PNG) --><br>Cloud server:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/server-top-pre-status.PNG" class="full-image" alt="not found :P" title="cloud server top status"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/server-top-pre-status.PNG) --><br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/server-ngxtop-pre-status.PNG" class="full-image" alt="not found :P" title="cloud server ngxtop status"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/server-ngxtop-pre-status.PNG) --></p>
+<p><strong>Test</strong><br>local machine:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/machine-task-during-status.PNG" class="full-image" alt="not found :P" title="local machine status during the test"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/machine-task-during-status.PNG) --><br>jmeter:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/jmeter-graph-result.PNG" class="full-image" alt="not found :P" title="graph result of jmeter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/jmeter-graph-result.PNG) --><br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/jmeter-summary-report.PNG" class="full-image" alt="not found :P" title="summary report of jmeter"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/jmeter-summary-report.PNG) --><br>Cloud server:<br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/server-top-during-status.PNG" class="full-image" alt="not found :P" title="server status with top"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/server-top-during-status.PNG) --><br><span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/server-ngxtop-during-status.PNG" class="full-image" alt="not found :P" title="server status with ngxtop"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span><br><!-- ![local machine](./public/server-ngxtop-during-status.PNG) --></p>
+<p>We can see that neither local machine or cloud server is not running out of resources. The network is so poor….</p>
+<p><strong>Result</strong><br>Because of the poor network, the test last so lang and the response time seem to be so lagrge because of network lantency.<br>When I do the test locally, which means to test the load on the virtual server in Vmware, 2GB java heap can only consume less than 100 users, and only consume less than 25% CPU usage of the virtual server.<br>It is said that node.js is the right one who solves the <a href="https://en.wikipedia.org/wiki/C10k_problem" target="_blank" rel="external">C10K problem</a>. Local experiment can only achieve a peak of 30 RPS. So with current devices, maybe I cannot test the boundry of nodejs.</p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/nginx/">nginx</a>
+          
+            <a href="/tags/jmeter/">jmeter</a>
+          
+            <a href="/tags/load-test/">load test</a>
+          
+            <a href="/tags/monitor/">monitor</a>
+          
+            <a href="/tags/java-heap/">java heap</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/02/17/Those food I cooked/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Those Food I Cooked</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2016/02/12/Color config for putty-vim/">
+        <span class="next-text nav-default">256-color config for vim in putty</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2016
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Changyun Gong</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.0"></script>
+
+  </body>
+</html>

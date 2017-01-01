@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="Web HotPot"/>
+
+
+
+
+  <meta name="keywords" content="website,note,nodejs,angularjs,nginx," />
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Don't Worry, Be Happy">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.1.0" />
+
+
+
+<link rel="canonical" href="http://sukiand.com/2015/09/14/WebTech-Navigate/"/>
+
+
+<meta name="description" content="keep on programming –&amp;gt; make a living –&amp;gt; marry a girl –&amp;gt; raise a child –&amp;gt; teach him to program !~
+
+Web Hotpot. Source code can be found in our github.We always see a lot of cool websites. A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web HotPot">
+<meta property="og:url" content="http://sukiand.com/2015/09/14/WebTech-Navigate/index.html">
+<meta property="og:site_name" content="Don't Worry, Be Happy">
+<meta property="og:description" content="keep on programming –&amp;gt; make a living –&amp;gt; marry a girl –&amp;gt; raise a child –&amp;gt; teach him to program !~
+
+Web Hotpot. Source code can be found in our github.We always see a lot of cool websites. A">
+<meta property="og:image" content="http://sukiand.com/images/css_layout.gif">
+<meta property="og:updated_time" content="2017-01-01T00:01:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web HotPot">
+<meta name="twitter:description" content="keep on programming –&amp;gt; make a living –&amp;gt; marry a girl –&amp;gt; raise a child –&amp;gt; teach him to program !~
+
+Web Hotpot. Source code can be found in our github.We always see a lot of cool websites. A">
+<meta name="twitter:image" content="http://sukiand.com/images/css_layout.gif">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.1.0" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+
+
+  
+
+
+
+    <title> Web HotPot · Don't Worry, Be Happy </title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Don't Worry, Be Happy</a>
+</div>
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+          </a>
+        </li>
+      
+      
+    </ul>
+  
+</nav>
+
+<div class="mobile-navbar">
+  <div class="mobile-header">
+    <div class="mobile-header-logo">
+      <a href="/." class="logo">Don't Worry, Be Happy</a>
+    </div>
+
+    <div class="mobile-header-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <nav class="mobile-menu">
+    
+      
+      <a class="mobile-menu-item" href="/">
+        Home
+      </a>
+    
+      
+      <a class="mobile-menu-item" href="/archives/">
+        Archives
+      </a>
+    
+  </nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Web HotPot
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          Sep 14, 2015
+        </span>
+      </div>
+    </header>
+
+    
+      <div class="post-toc" id="post-toc">
+        <h2 class="post-toc-title">Contents</h2>
+        <div class="post-toc-content">
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#node-js"><span class="toc-text">node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm"><span class="toc-text">npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#express"><span class="toc-text">express</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#application"><span class="toc-text">application</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router"><span class="toc-text">router</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mongoose"><span class="toc-text">mongoose</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grunt"><span class="toc-text">grunt</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb"><span class="toc-text">mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Front-end"><span class="toc-text">Front end</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS"><span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#general"><span class="toc-text">general</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#layout"><span class="toc-text">layout</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jQuery"><span class="toc-text">jQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Event"><span class="toc-text">Event</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Effect"><span class="toc-text">Effect</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Manipulate-HTML-CSS"><span class="toc-text">Manipulate HTML/CSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#jQuery-AJAX"><span class="toc-text">jQuery AJAX</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AngularJS"><span class="toc-text">AngularJS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sementicUI"><span class="toc-text">sementicUI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain-name"><span class="toc-text">domain name</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AWS-EC2"><span class="toc-text">AWS EC2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Extra"><span class="toc-text">Extra</span></a></li></ol>
+        </div>
+      </div>
+    
+
+    <div class="post-content">
+      
+        <blockquote class="blockquote-center"><p>keep on programming –&gt; make a living –&gt; marry a girl –&gt; raise a child –&gt; teach him to program !~</p>
+</blockquote>
+<p><a href="http://webhotpot.com" target="_blank" rel="external">Web Hotpot</a>. Source code can be found in our <a href="https://github.com/sukiand/WebTech-Navigate" target="_blank" rel="external">github</a>.<br>We always see a lot of cool websites. Also, we heared about website elements, such as servers: wamp, lighttpd, frameworks: web.py, twisted, javascripts: angularJS, BootStrap, and some other website techniques. This time, My friend <a href="http://tissuefluid.github.io/" target="_blank" rel="external">Zhiyue Zu</a> and I want to build our own website systematically, from front to end, from interface to database. We are willing to share our knowledge with others. Also, we’ll appreciate that someone tell us amazing techniques or frameworks.<br><a id="more"></a><br>Ths website is a simply a navigation website, we call it WebTech Navigate. We desire to collect information about techniques that will be use when building a website.</p>
+<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>A lot of codeing is necessary to build a website, so editor is important. I heared about emacs, but I’m still more customed in vim.</p>
+<p>vim is a powerful editor because of brunches of plugins. Personally, I recommand <a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">vundle</a> rather than <a href="https://github.com/tpope/vim-pathogen" target="_blank" rel="external">pathogen</a> because vundle is more advanced to manage the plugins. Excellent plugins can be found in <a href="http://vimawesome.com" target="_blank" rel="external">VimAwesome</a>. I have a .vim configuration in my github. So each time when I have to config a new linux machine, I’ll:</p>
+<p>1 check if vim is well installed. If not, reinstall.</p>
+<p>2 use scp, winscp or git to copy the .vim file.</p>
+<p>3 Install vundle<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</div></pre></td></tr></table></figure></p>
+<p>4 Launch vim and run<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:PluginInstall</div></pre></td></tr></table></figure></p>
+<h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><p>I used lighttpd to build my snake game. This time, we choose nginx which seems more professional. Nginx can provide basic HTTP or SMTP service. With fastcgi module, nginx can support all kinds of script files. But when nginx cooperate with nodejs which already has a server service, we will use nginx as a reverse proxy to control the load balance.</p>
+<p>1 install nginx in Ubuntu<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install nginx</div></pre></td></tr></table></figure></p>
+<p>2 start the server<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo ./usr/sbin/nginx</div></pre></td></tr></table></figure></p>
+<p>3 control the server. signals can be stop, quit, reload and reopen<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nginx <span class="_">-s</span> signal</div></pre></td></tr></table></figure></p>
+<p>4 revise the configuration file, at <code>/etc/nginx/sites-enabled/</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">upstream myapp&#123;</div><div class="line">   least_conn;</div><div class="line">   server IP:port_1;</div><div class="line">   server IP:port_2;</div><div class="line">   ...;</div><div class="line">   keepalive 64;</div><div class="line">&#125;</div><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://myapp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>As described in <a href="http://nginx.org/en/docs/http/load_balancing.html" target="_blank" rel="external">Using nginx as HTTP load balancer</a> There are 3 ways provided by Nginx.</p>
+<ul>
+<li>round-bin: requests to the application servers are distributed in a round-robin fashion</li>
+<li>least-connected: next request is assigned to the server with the least number of active connections</li>
+<li>ip-hashed: a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address)</li>
+</ul>
+<p><strong>Load balance</strong> across multiple application instances is a commonly used technique for <strong>optimizing resource utilization, maximizing throughput, reducing latency, and ensuring fault-tolerant configurations</strong>.</p>
+<p>Reverse proxy implementation in nginx includes in-band (or passive) server <strong>health checks</strong>. If the response from a particular server fails with an error, nginx will mark this server as failed, and will try to avoid selecting this server for subsequent inbound requests for a while.</p>
+<p>Make sure nginx reload the configuration file, a simple reverse proxy is set up. It works!</p>
+<h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p>node.js is an event-driven I/O server-side JS environment. It is brillant because with this we can use JS in frot, back and even the server. Node.js can solve the 10k problem easily.<br>Use nvm to install, manage or transfer node.js for different versions. Use npm to manage javascript packages.<br>Node provide a bunch of APIs, which can be seen in <a href="https://nodejs.org/api/documentation.html" target="_blank" rel="external">API Documentation</a>.<br>Here just list some of them:</p>
+<ul>
+<li>Console</li>
+<li>HTTP</li>
+<li>HTTPS</li>
+<li>fs(File System)</li>
+<li>Path</li>
+<li>Modules</li>
+</ul>
+<p>syntax for using modules:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const/var valuable = require(<span class="string">'module_name'</span>);</div></pre></td></tr></table></figure></p>
+<p>For example:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const http = require(<span class="string">'http'</span>);</div><div class="line"></div><div class="line">http.createServer( (request, response) =&gt; &#123;</div><div class="line">  response.writeHead(200, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</div><div class="line">  response.end(<span class="string">'Hello World\n'</span>);</div><div class="line">&#125;).listen(8124);</div><div class="line"></div><div class="line">console.log(<span class="string">'Server running at http://127.0.0.1:8124/'</span>);</div></pre></td></tr></table></figure></p>
+<p>Another important thing is <a href="https://nodejs.org/api/modules.html" target="_blank" rel="external"><strong>module loading system</strong></a>.<br>Built in modules are core modules, use:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ require(<span class="string">'http'</span>);</div></pre></td></tr></table></figure></p>
+<p>user’s modules can be used in the way:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ require(./a.js);</div></pre></td></tr></table></figure></p>
+<p>There are two ways to export:<br>1 Add functions and objects to the root of your module, you can add them to the special exports object.<br><code>circle.js</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">const PI = Math.PI;</div><div class="line"></div><div class="line">exports.area = <span class="keyword">function</span> (r) &#123;</div><div class="line">  <span class="built_in">return</span> PI * r * r;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">exports.circumference = <span class="keyword">function</span> (r) &#123;</div><div class="line">  <span class="built_in">return</span> 2 * PI * r;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><code>foo.js</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">const circle = require(<span class="string">'./circle.js'</span>);</div><div class="line">console.log( `The area of a circle of radius 4 is <span class="variable">$&#123;circle.area(4)&#125;</span>`);</div></pre></td></tr></table></figure></p>
+<p>2 If you want the root of your module’s export to be a function (such as a constructor) or if you want to export a complete object in one assignment instead of building it one property at a time, assign it to module.exports instead of exports<br>square module is defined in <code>square.js</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// assigning to exports will not modify module, must use module.exports</div><div class="line">module.exports = <span class="keyword">function</span>(width) &#123;</div><div class="line">  <span class="built_in">return</span> &#123;</div><div class="line">    area: <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">      <span class="built_in">return</span> width * width;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>bar.js</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const square = require(<span class="string">'./square.js'</span>);</div><div class="line">var mySquare = square(2);</div><div class="line">console.log(`The area of my square is <span class="variable">$&#123;mySquare.area()&#125;</span>`);</div></pre></td></tr></table></figure></p>
+<p>Way 1 is recommanded, so that it’s scalable.</p>
+<p>###nvm<br>The usage of nvm can be found at <a href="https://github.com/creationix/nvm" target="_blank" rel="external">Node Version Manager</a>.<br>Install nvm with script:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</div></pre></td></tr></table></figure></p>
+<p>or with Wget:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash</div></pre></td></tr></table></figure></p>
+<p>nvm repositry can be found at <code>~/.nvm</code><br>Install/use/run a certain version of node.js:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install/use/run [version_num]</div></pre></td></tr></table></figure></p>
+<p>or to use the stable version<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm install/use/run stable</div></pre></td></tr></table></figure></p>
+<p>Find the path of a certain version of node.js:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm <span class="built_in">which</span> [version_num]</div></pre></td></tr></table></figure></p>
+<p><strong>set default</strong> version of node.js:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm <span class="built_in">alias</span> default [version_num]</div></pre></td></tr></table></figure></p>
+<p>use ls to check all the version installed, and the sversion of stable and default.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nvm ls</div></pre></td></tr></table></figure></p>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>npm is <strong>package manager</strong> for javascript, here we use it as the manager for node.js.<br>Search on <a href="https://www.npmjs.com/" target="_blank" rel="external">npm website</a> to find the package you need, and use the command to install the package:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install [package_name]</div></pre></td></tr></table></figure></p>
+<p>Moreover, it’s better to use the <strong>package.json</strong>. Inside the project, run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init</div></pre></td></tr></table></figure></p>
+<p>If it’s a new project download from other place, already have the json file, just run the command, so the npm will install the dependencies automatically:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
+<p>When install some package, which contain some <strong>global</strong> commands, such as express generator, run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install [package_name] -g</div></pre></td></tr></table></figure></p>
+<p>When installing a package, which need to  be record in the json, run:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install [package_name] --save</div></pre></td></tr></table></figure></p>
+<p>Update:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm update</div></pre></td></tr></table></figure></p>
+<p>Uninstall:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall [package_name]</div></pre></td></tr></table></figure></p>
+<p>Uninstall along with the json record:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm uninstall --save [package_name]</div></pre></td></tr></table></figure></p>
+<h3 id="express"><a href="#express" class="headerlink" title="express"></a>express</h3><p><a href="http://expressjs.com/" target="_blank" rel="external">Express</a> is a web framework for node.js.<br>Install express inside a project:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install express --save</div></pre></td></tr></table></figure></p>
+<p>Or, we want to create a project based on node.js and express, we can use express generator directlly, like described in the <a href="http://expressjs.com/en/starter/generator.html" target="_blank" rel="external">Express application generator</a>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ npm install -g express-generator</div><div class="line">$ express [path] &amp;&amp; <span class="built_in">cd</span> [path]</div><div class="line">&amp; npm install</div><div class="line">&amp; npm start</div></pre></td></tr></table></figure></p>
+<p>Express has lots of APIs too. <a href="http://expressjs.com/en/4x/api.html" target="_blank" rel="external">Express API 4.x</a>.</p>
+<h4 id="application"><a href="#application" class="headerlink" title="application"></a>application</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var express = require(<span class="string">'express'</span>);</div><div class="line">var app = express();</div></pre></td></tr></table></figure>
+<p>There are several general functions:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.set(name, value);</div><div class="line">app.use([path,] <span class="keyword">function</span> [, function...]);</div><div class="line">app.get(name);</div><div class="line">app.get(path, callback [, callback ...]);</div></pre></td></tr></table></figure></p>
+<h4 id="router"><a href="#router" class="headerlink" title="router"></a>router</h4><p>example of basic route:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var express = require(<span class="string">'express'</span>);</div><div class="line">var app = express();</div><div class="line"></div><div class="line">// respond with <span class="string">"hello world"</span> when a GET request is made to the homepage</div><div class="line">app.get(<span class="string">'/'</span>, <span class="keyword">function</span>(req, res) &#123;</div><div class="line">  res.send(<span class="string">'hello world'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>req and res can be treated as a data set or structure, they have many useful members<br>like req.ip req.hostname req.cookies req.secure.</p>
+<h3 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h3><h3 id="grunt"><a href="#grunt" class="headerlink" title="grunt"></a>grunt</h3><p>Javascript Tsak runner.<br>Grunt should be installed as global:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g grunt-cli</div></pre></td></tr></table></figure></p>
+<p>There are many grunt plugins which can support the js tasks. Use the way to install them and add into <code>package.json</code> in the developing environment.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install grunt --save-dev</div><div class="line">$ npm install grunt-contrib-jshint --save-dev</div></pre></td></tr></table></figure></p>
+<p>Inside the folder, there would be a file named as <code>Gruntfile.js</code> or <code>Gruntfile.coffee</code>.<br>Example of Grunt file:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">module.exports = <span class="keyword">function</span>(grunt) &#123;</div><div class="line"></div><div class="line">  // Project configuration.</div><div class="line">  grunt.initConfig(&#123;</div><div class="line">    pkg: grunt.file.readJSON(<span class="string">'package.json'</span>),</div><div class="line">    uglify: &#123;</div><div class="line">      options: &#123;</div><div class="line">        banner: <span class="string">'/*! &lt;%= pkg.name %&gt; &lt;%= grunt.template.today("yyyy-mm-dd") %&gt; */\n'</span></div><div class="line">      &#125;,</div><div class="line">      build: &#123;</div><div class="line">        src: <span class="string">'src/&lt;%= pkg.name %&gt;.js'</span>,</div><div class="line">        dest: <span class="string">'build/&lt;%= pkg.name %&gt;.min.js'</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  // Load the plugin that provides the <span class="string">"uglify"</span> task.</div><div class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-uglify'</span>);</div><div class="line"></div><div class="line">  // Default task(s).</div><div class="line">  grunt.registerTask(<span class="string">'default'</span>, [<span class="string">'uglify'</span>]);</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>options:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">grunt.initConfig(&#123;</div><div class="line">  concat: &#123;</div><div class="line">    options: &#123;</div><div class="line">      // Task-level options may go here, overriding task defaults.</div><div class="line">    &#125;,</div><div class="line">    foo: &#123;</div><div class="line">      options: &#123;</div><div class="line">        // <span class="string">"foo"</span> target options may go here, overriding task-level options.</div><div class="line">      &#125;,</div><div class="line">    &#125;,</div><div class="line">    bar: &#123;</div><div class="line">      // No options specified; this target will use task-level options.</div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>file compact:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">grunt.initConfig(&#123;</div><div class="line">  jshint: &#123;</div><div class="line">    foo: &#123;</div><div class="line">      src: [<span class="string">'src/aa.js'</span>, <span class="string">'src/aaa.js'</span>]</div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">  concat: &#123;</div><div class="line">    bar: &#123;</div><div class="line">      src: [<span class="string">'src/bb.js'</span>, <span class="string">'src/bbb.js'</span>],</div><div class="line">      dest: <span class="string">'dest/b.js'</span>,</div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>Grunt can be used to:<br>1 copy the min.js in developing environment to <code>./public/javascript</code> as same as css files.<br>2 compress your own js, css file into destination<br>3 watch the js files to see if there is syntax error.</p>
+<p>Useful tasts:</p>
+<ul>
+<li>concat<br><a href="https://github.com/gruntjs/grunt-contrib-concat" target="_blank" rel="external">grunt-contrib-concat</a>. Concatenating files with a custom separator</li>
+<li>jshint<br><a href="https://github.com/gruntjs/grunt-contrib-jshint" target="_blank" rel="external">grunt-contrib-jshint</a>. Valid files with <a href="http://jshint.com/" target="_blank" rel="external">JSHint</a></li>
+<li>uglify js<br><a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank" rel="external">grunt-contrib-uglify</a>. Minify js files.</li>
+<li>minify css<br><a href="https://www.npmjs.com/package/grunt-contrib-cssmin" target="_blank" rel="external">grunt-contrib-cssmin</a>. Minify css files.</li>
+<li>watch</li>
+<li>copy</li>
+</ul>
+<h2 id="mongodb"><a href="#mongodb" class="headerlink" title="mongodb"></a>mongodb</h2><h2 id="Front-end"><a href="#Front-end" class="headerlink" title="Front end"></a>Front end</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>markup language. HTML is used to establish a page’s structure. It also lets us add text, links and images.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>body contains the actual content of the web page.<br>general usage:<br>headings. h1 to h6. <code>&lt;h1&gt;text&lt;/h1&gt;</code><br>paragraph. <code>&lt;p&gt;text&lt;/p&gt;</code><br>Links. <code>&lt;a href=&quot;&quot;&gt;text&lt;/a&gt;</code><br>Images. <code>&lt;img src=&quot; &quot;&gt;</code><br>Lists.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>CSS is used to control the design and layout of the page.<br>use the syntax to load css to a html:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"xxx.css"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>####rules<br>Start with selector, inside the brace, are property and value pairs.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">	color:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div class = <span class="string">"my_class"</span>&gt;</div><div class="line"></div><div class="line">.my_class &#123;</div><div class="line">	color: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">or be more specific</div><div class="line">.my_class p &#123;</div><div class="line">	color: green;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;input <span class="built_in">type</span>=<span class="string">'button'</span> id = <span class="string">'Return To Top'</span>&gt;</div><div class="line"></div><div class="line"><span class="comment">#Return To Top &#123;</span></div><div class="line">	color:<span class="comment">#ffffff;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>####colors</p>
+<ul>
+<li>Word: red</li>
+<li>RGB: 0 to 255. rgb(102,153,0)</li>
+<li>Hex: 00 to ff. #9933CC</li>
+</ul>
+<h4 id="general"><a href="#general" class="headerlink" title="general"></a>general</h4><p>font-family<br>font-size (pixels, ems, or rems),px, em<br>background-color<br>background-image</p>
+<h4 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h4><p>padding; border; margin; position<br><!-- ![css_layout.gif load error](./public/css_layout.gif) --></p>
+<span itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><img itemprop="url image" src="/images/css_layout.gif" class="full-image" alt="not found :P" title="css layout"><meta itemprop="width" content="auto"><meta itemprop="height" content="auto"></span>
+<p>####selector<br><a href="http://www.w3schools.com/cssref/css_selectors.asp" target="_blank" rel="external">CSS selector</a></p>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><p>jQuery is a Javascript Library. <strong>write less, do more</strong><br>For a comparison, STL(standard temlate Library) in C++, which provide convenient functions by encapusulationg the lower leverl of C++.<br>We can know jQuery API fron <a href="http://api.jquery.com/" target="_blank" rel="external">official website</a>. Also can learn from <a href="https://www.codecademy.com/learn" target="_blank" rel="external">codeacademy</a> and <a href="http://www.w3schools.com/jquery/default.asp" target="_blank" rel="external">w3schools</a>.<br>jQuery library contains the following features:</p>
+<ul>
+<li>HTML/DOM manipulation</li>
+<li>CSS manipulation</li>
+<li>HTML event methods</li>
+<li>Effects and animations</li>
+<li>AJAX</li>
+<li>Utilities</li>
+</ul>
+<p>####Syntax:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).action()</div></pre></td></tr></table></figure></p>
+<p>Like the css selector:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).hide() - hides all &lt;p&gt; elements.</div><div class="line">$(<span class="string">".test"</span>).hide() - hides all elements with class=<span class="string">"test"</span>.</div><div class="line">$(<span class="string">"#test"</span>).hide() - hides the element with id=<span class="string">"test"</span>.</div></pre></td></tr></table></figure></p>
+<p>The document ready event:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$(document).ready(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"></div><div class="line">   // jQuery methods go here...</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">or</div><div class="line"></div><div class="line">$(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line"></div><div class="line">   // jQuery methods go here...</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h4><ul>
+<li>Mouse<br>  click; dbclick; mouseenter; mouseleave;</li>
+<li>Keyboard<br>  keypress; keydown; keyup;</li>
+<li>Form<br>  submit; change; focus; blur;</li>
+<li>Document/Window<br>  load; resize; scroll; unload;<br>pass a function to the event:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">  // action goes here!!</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="Effect"><a href="#Effect" class="headerlink" title="Effect"></a>Effect</h4><p>Hide/Show; Fade; Slide; Animate; … See the syntax on the API.</p>
+<h4 id="Manipulate-HTML-CSS"><a href="#Manipulate-HTML-CSS" class="headerlink" title="Manipulate HTML/CSS"></a>Manipulate HTML/CSS</h4><p>Get content<br>Set content<br>Add or remove<br>change the css attrbite<br>…</p>
+<h4 id="jQuery-AJAX"><a href="#jQuery-AJAX" class="headerlink" title="jQuery AJAX"></a>jQuery AJAX</h4><p>AJAX = Asynchronous JavaScript and XML.<br><strong>AJAX is about loading data in the background and display it on the webpage, without reloading the whole page</strong></p>
+<p>The load() method loads data from a server and puts the returned data into the selected element:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).load(URL,data,callback);</div></pre></td></tr></table></figure></p>
+<p>eg:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;h2&gt;jQuery and AJAX is FUN!!!&lt;/h2&gt;</div><div class="line">&lt;p id=<span class="string">"div1"</span>&gt;This is some text <span class="keyword">in</span> a paragraph.&lt;/p&gt;</div><div class="line"></div><div class="line">$(<span class="string">"#div1"</span>).load(<span class="string">"demo_test.txt"</span>);</div></pre></td></tr></table></figure></p>
+<p>The jQuery get() and post() methods are used to request data from the server with an HTTP GET or POST request:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$.get(URL,callback);</div><div class="line">$.post(URL,data,callback);</div></pre></td></tr></table></figure></p>
+<p>But generally, modern framework like AngularJS, react, they have their own mechanism to update certain DOM. </p>
+<h3 id="AngularJS"><a href="#AngularJS" class="headerlink" title="AngularJS"></a>AngularJS</h3><h3 id="sementicUI"><a href="#sementicUI" class="headerlink" title="sementicUI"></a>sementicUI</h3><h2 id="domain-name"><a href="#domain-name" class="headerlink" title="domain name"></a>domain name</h2><h2 id="AWS-EC2"><a href="#AWS-EC2" class="headerlink" title="AWS EC2"></a>AWS EC2</h2><h2 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h2><p>###Disqus</p>
+<p>###Google analysic</p>
+
+      
+    </div>
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/website/">website</a>
+          
+            <a href="/tags/note/">note</a>
+          
+            <a href="/tags/nodejs/">nodejs</a>
+          
+            <a href="/tags/angularjs/">angularjs</a>
+          
+            <a href="/tags/nginx/">nginx</a>
+          
+        </div>
+
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2016/02/12/Color config for putty-vim/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">256-color config for vim in putty</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2015/09/09/ERP-Intern-Experience-in-Yonyou/">
+        <span class="next-text nav-default">ERP Intern Experience in Yonyou</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+        </div>  
+      </main>
+
+      <footer id="footer" class="footer">
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+  </div>
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2016
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Changyun Gong</span>
+  </span>
+</div>
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+
+
+    
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.1.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.1.0"></script>
+
+  </body>
+</html>
